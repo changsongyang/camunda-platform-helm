@@ -633,7 +633,7 @@ Release templates.
   {{- end }}
 
   {{- if .Values.webModeler.enabled }}
-  {{-  $proto := (lower .Values.webModeler.readinessProbe.scheme) -}}
+  {{-  $proto := (lower .Values.webModeler.webapp.readinessProbe.scheme) -}}
   {{- $baseURLInternal := printf "%s://%s.%s:%v" $proto (include "webModeler.webapp.fullname" .) .Release.Namespace .Values.webModeler.webapp.service.managementPort }}
   - name: WebModeler WebApp
     id: webModelerWebApp
